@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Chatbot</title>
+    <title>Group 14 Health Chatbot</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -31,6 +31,16 @@
         border-radius: 5px;
         cursor: pointer;
       }
+	  #credits {
+        margin-top: 20px;
+        font-style: italic;
+        font-family: 'Georgia', serif;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        max-width: 70%;
+        margin: auto;
+      }
     </style>
   </head>
   <body>
@@ -49,7 +59,7 @@
         var chatbox = document.getElementById('chat');
 
         // Append user message to the chatbox
-        chatbox.innerHTML += '<p>User: ' + userInput + '</p>';
+        chatbox.innerHTML += '<p style="color: #3498db">User: ' + userInput + '</p>';
 
         // Simulate a dummy API request
         fetch('/api?query=' + userInput)
@@ -57,7 +67,7 @@
           .then(data => {
             // Use the API response as botResponse
             var botResponse = data.output;
-            chatbox.innerHTML += '<p>Bot: ' + botResponse + '</p>';
+            chatbox.innerHTML += '<p style="color: #2ecc71">Bot: ' + botResponse + '</p>';
 	    
           })
           .catch(error => {
@@ -68,6 +78,14 @@
         document.getElementById('inputField').value = '';
       }
     </script>
-
+	<div id="credits">
+      <p>Credits:</p>
+      <ul style="list-style: none; padding: 0;">
+        <li>Shikhar Bajpai</li>
+        <li>Shivam Gupta</li>
+        <li>Shivam Patel</li>
+        <li>Anshu Gangwar</li>
+      </ul>
+    </div>
   </body>
 </html>
